@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <table id="dynamic-table" border="1">
+         <tr>
+                <td>cell 1</td>
+                <td>cell 2</td>   
+         </tr>   
+        </table>
+        <br>
+        
+        <input type="button" value="Add row" onclick="addRow(i++)">
+        <script>
+            
+            var i=0;
+            var t = document.getElementById("dynamic-table");
+            
+            document.getElementById("button").addEventListener("click",addRow());
+            
+            function addRow(i)
+            {
+                
+                var table = document.getElementById("dynamic-table");
+                i++;
+                var row = table.insertRow(i);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                i+=2;
+                cell1.innerHTML = "cell "+i;
+                i++;
+                cell2.innerHTML = "cell "+i;
+                
+
+            }
+           
+        </script>
+    
+    </body>
+</html>
